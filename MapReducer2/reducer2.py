@@ -1,6 +1,5 @@
 # input format ContestName and User_location Sorting Ascending By
 # Contest_Name->Best Rate in Contest -> User_id -> User_HomeCountry
-######
 import sys
 
 
@@ -9,30 +8,19 @@ def modify(line, separator='\t'):
 
 
 def reducer():
-    All_info = {}     # To avoid Taking more than 4 Contest in Each Contest
-    countries_per_contest = []  # To Store The Country of 4 Contest and print when the len equal 4
-    Contents = []
+    Count_Top_4 = 0
+    contest = "#"
     for line in sys.stdin:
-        Contents.append(line)
-    Contents.sort()
-    for line in Contents:
         Components = modify(line)
-        if Components[0] == '~':
+        if Components[0] == '0' or (Components[0] == contest and Count_Top_4 >= 4):
             continue
-        if Components[0] not in All_info:
-            All_info[Components[0]] = 1
-            countries_per_contest.append(Components[3])
-        elif Components[0] in All_info and All_info[Components[0]] < 4:
-            All_info[Components[0]] = All_info[Components[0]] + 1
-            countries_per_contest.append(Components[3])
-            Rank = 1
-            if All_info[Components[0]] == 4:
-                ret = str(Components[0]) + ": "
-                for x in countries_per_contest:
-                    ret = ret + "(" + str(Rank) + ")" + str(x) + " "
-                    Rank = Rank + 1
-                print(ret + "\n")
-                countries_per_contest = []
+        elif Components[0] != contest:
+            contest = Components[0]
+            Count_Top_4 = 1
+            print(str(Components[0]) + ": " + "\n" + "(" + str(Count_Top_4) + ")" + str(Components[3]) + " ")
+        elif Components[0] == contest and Count_Top_4 < 4:
+            Count_Top_4 = Count_Top_4 + 1
+            print("(" + str(Count_Top_4) + ")" + str(Components[3]) + " ")
         else:
             continue
 

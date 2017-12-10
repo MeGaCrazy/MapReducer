@@ -8,14 +8,14 @@ def modify(line, separator='\t'):
     return line.strip().split(separator)
 
 
-def encypt(contest_id, user_id, location, user_rate):
-    return str(contest_id) + "\t" + str(user_id) + "\t" + str(location) + "\t" + str(user_rate)
+def encypt(contest_name, user_id, location, user_rate):
+    return str(contest_name) + "\t" + str(user_id) + "\t" + str(location) + "\t" + str(user_rate)
 
 
 def mapper():
     for line in sys.stdin:
         location = '~'
-        contest_id = '~'
+        contest_name = '0'
         user_rate = '~'
         user_id = '~'
         Components = modify(line)
@@ -23,10 +23,10 @@ def mapper():
             user_id = Components[1]
             location = Components[2]
         else:
-            contest_id = Components[0]
+            contest_name = Components[0]
             user_rate = Components[3]
             user_id = Components[2]
-        print(encypt(user_id, contest_id, location, user_rate))
+        print(encypt(user_id, contest_name, location, user_rate))
 
         # OutPut User_id,Contest_id,location,User_rate Sorted Ascending
 
