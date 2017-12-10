@@ -1,5 +1,5 @@
 # input format ContestName and User_location Sorting Ascending By
-# Best Rate in Contest -> id of user -> Name of it's Country
+# Contest_Name->Best Rate in Contest -> User_id -> User_HomeCountry
 ######
 import sys
 
@@ -9,8 +9,8 @@ def modify(line, separator='\t'):
 
 
 def reducer():
-    All_info = {}
-    countries_per_contest = []
+    All_info = {}     # To avoid Taking more than 4 Contest in Each Contest
+    countries_per_contest = []  # To Store The Country of 4 Contest and print when the len equal 4
     Contents = []
     for line in sys.stdin:
         Contents.append(line)
@@ -37,5 +37,6 @@ def reducer():
             continue
 
 
+# Output the First 4 Contestant in Every Contest like format ACMICPC# : (1) # (2) # (3) # (4) #
 if __name__ == '__main__':
     reducer()

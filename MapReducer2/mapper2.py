@@ -16,6 +16,6 @@ def mapper():
         print(encypt(Components[0], Components[1], Components[2], Components[3]))
 
 
-# Output ContestName and User_location  By Top Rate in Contest
+# Output ContestName and User_Rate  and User_id and User_Location
 if __name__ == '__main__':
     mapper()

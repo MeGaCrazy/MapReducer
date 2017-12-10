@@ -13,7 +13,6 @@ def encypt(contest_id, user_id, location, user_rate):
 
 
 def mapper():
-    ret = []
     for line in sys.stdin:
         location = '~'
         contest_id = '~'
