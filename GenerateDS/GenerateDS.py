@@ -29,7 +29,7 @@ def GenerateDS():
     for x in range(2, len(users_name)):
         users_location.append(random.choice(Countries))
 
-    with open('/mnt/88E0978DE097805C/FCIH/Projects/3rd1-Semeter/OS2-Task2/MapReducer/GenerateDS/Contestants.txt', 'w') as myfile:
+    with open('Contestants.txt', 'w') as myfile:
         for x in range(0, len(users_name)):
             myfile.write(str(users_name[x]) + "\t" + str(x) + "\t" + str(users_location[x]) + "\n")
         myfile.close()
@@ -42,7 +42,7 @@ def GenerateDS():
     for x in range(1975, Contests_Number):
         contest_name.append(Contest_General_Name + str(x))
 
-    with open('/mnt/88E0978DE097805C/FCIH/Projects/3rd1-Semeter/OS2-Task2/MapReducer/GenerateDS/Contests.txt', "w") as myfile:
+    with open('Contests.txt', "w") as myfile:
         for x in range(0, len(contest_name)):
             Contest_Location = str(random.choice(Countries))
             for y in range(0, 50):
