@@ -27,10 +27,7 @@ def mapper():
             contest_id = Components[0]
             user_rate = Components[3]
             user_id = Components[2]
-        ret.append(encypt(user_id, contest_id, location, user_rate))
-    ret.sort()
-    for x in ret:
-        print(x)
+        print(encypt(user_id, contest_id, location, user_rate))
 
         # OutPut User_id,Contest_id,location,User_rate Sorted Ascending
 

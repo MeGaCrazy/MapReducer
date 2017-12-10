@@ -1,4 +1,5 @@
-# input format ContestName and User_location Sorting Ascending By Best Rate in Contest
+# input format ContestName and User_location Sorting Ascending By
+# Best Rate in Contest -> id of user -> Name of it's Country
 ######
 import sys
 
@@ -10,16 +11,20 @@ def modify(line, separator='\t'):
 def reducer():
     All_info = {}
     countries_per_contest = []
+    Contents = []
     for line in sys.stdin:
+        Contents.append(line)
+    Contents.sort()
+    for line in Contents:
         Components = modify(line)
         if Components[0] == '~':
             continue
         if Components[0] not in All_info:
             All_info[Components[0]] = 1
-            countries_per_contest.append(Components[1])
+            countries_per_contest.append(Components[3])
         elif Components[0] in All_info and All_info[Components[0]] < 4:
             All_info[Components[0]] = All_info[Components[0]] + 1
-            countries_per_contest.append(Components[1])
+            countries_per_contest.append(Components[3])
             Rank = 1
             if All_info[Components[0]] == 4:
                 ret = str(Components[0]) + ": "
