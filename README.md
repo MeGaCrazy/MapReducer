@@ -1,6 +1,6 @@
 # ACM_ICPCs analysis
 the aim of this analysis to know the Best 4 Countries
-who achieve highest ranked in the contest in last 42 year depend on  
+who achieve highest ranked in the contest in last 42 years depend on  
 `some real and generated data`
 ## what is [ACM](https://en.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest)
 [![N|Solid](https://cs.hamilton.edu/wordpress/wp-content/uploads/2016/09/logo.jpg)](https://icpc.baylor.edu/)
