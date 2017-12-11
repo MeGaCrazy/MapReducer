@@ -14,7 +14,7 @@ columns:
 ```
 ContestName,Contest_id,Contestant_id,Rate_Of Contestant,Contest_Location
 ```
-2- [Contestants analysis in seperated contests](https://github.com/MeGaCrazy/MapReducer/blob/master/GenerateDS/Contestants.txt)
+2- [Contestants Info](https://github.com/MeGaCrazy/MapReducer/blob/master/GenerateDS/Contestants.txt)
 
 columns:
 ```
